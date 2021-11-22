@@ -1,12 +1,13 @@
-import { cacheKey } from '../../src/utils/cacheKey';
+import { jest } from '@jest/globals';
+import { cacheKey } from './cacheKey';
 
 declare let global: never;
 
 describe('Cache Key Creation', () => {
   const testGuid = '1';
-  const expectedResult = 'fake.data:1';
+  const expectedResult = 'dev.data:1';
   beforeEach(() => {
-    Object.assign(global, { CACHE_KEY_PREFIX: 'fake.data:' });
+    Object.assign(global, getMiniflareBindings());
     jest.resetModules();
   });
 

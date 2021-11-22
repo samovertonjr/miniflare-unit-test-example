@@ -3,12 +3,14 @@
     "outDir": "./dist",
     "module": "esnext",
     "target": "esnext",
-    "lib": ["esnext"],
+    "lib": ["esnext", "webworker"],
     "alwaysStrict": true,
     "strict": true,
     "preserveConstEnums": true,
     "moduleResolution": "node",
-    "types": ["@cloudflare/workers-types", "@types/jest", "@types/service-worker-mock"]
+    "noEmit": true,
+    "esModuleInterop": true,
+    "types": ["@cloudflare/workers-types", "@types/jest"]
   },
-  "include": ["src/**/*", "bindings.d.ts"]
+  "include": ["src/**/*", "globals.d.ts"]
 }

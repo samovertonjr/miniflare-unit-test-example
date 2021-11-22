@@ -1,10 +1,13 @@
-import { defaults } from 'jest-config';
 export default {
-  // roots: ['<rootDir>/src'],
-  // moduleFileExtensions: ['ts', 'js'],
-  // testRegex: '((\\.|/*.)(spec))\\.mjs?$',
-  // collectCoverageFrom: ['src/**/*.{ts,js}'],
+  preset: 'ts-jest/presets/default-esm',
+  transform: {
+    '^.+\\.(t|j)sx?$': 'ts-jest',
+  },
+  testRegex: '((\\.|/*.)(spec))\\.ts?$',
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
   testEnvironment: 'miniflare',
-  testMatch: ['**/dist/test/**/*.mjs'],
-  moduleFileExtensions: [...defaults.moduleFileExtensions, 'mjs'],
 };

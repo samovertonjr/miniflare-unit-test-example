@@ -1,4 +1,6 @@
-import { yearMonthDayFormat } from '../src/utils/formatDate';
+import { jest } from '@jest/globals';
+
+import { yearMonthDayFormat } from './formatDate';
 
 describe('Format Date', () => {
   beforeEach(() => {
